@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="./styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <a id="index-redirect" href="index.html" style="display:none"></a>
+    <form class="login-form">
+        <image src="logo.png" width="70px" />
+        <h1>KlimTities</h1>
+        <input id="userField" class="input" type="text" name="username" placeholder="Username"></input>
+        <input id="passField" class="input" type="password" name="password" placeholder="Password"></input>
+        <span class="input button" onclick="login()">Login</span>
+    </form>
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+</body>
+
+</html>
+
+<style>
+    :root {
+        --input-red: rgb(115, 48, 45);
+        --input-green: rgb(20, 122, 65);
+        --action: rgb(255, 255, 255);
+        --background: #081017;
+        --surfacePrimary: rgb(32, 41, 47);
+        --surfaceSecondary: rgb(58, 65, 71);
+        --textPrimary: rgba(255, 255, 255, .6);
+        --textSecondary: rgba(255, 255, 255, .87);
+        --divider: rgba(255, 255, 255, .12);
+        --iconPrimary: rgb(255, 255, 255);
+        --iconSecondary: rgb(255, 255, 255);
+        --iconTertiary: rgb(255, 255, 255);
+        --hover: rgba(255, 255, 255, .1);
+        --borderPrimary: rgba(255, 255, 255, .05);
+        --borderSecondary: rgba(255, 255, 255, .15);
+        --dividerPrimary: rgba(30, 30, 30, .4);
+        --dividerSecondary: rgba(30, 30, 30, .6);
+    }
+
+
+    *,
+    *:hover,
+    *:active,
+    *:focus {
+        outline: 0;
+    }
+
+    html,
+    body {
+        overflow: hidden;
+        background: #081017;
+        color: white;
+        width: 100%;
+        height: 100%;
+        font-family: Roboto, sans-serif;
+        line-height: 1.15;
+    }
+
+    .input {
+        background: var(--surfacePrimary);
+        margin-bottom: .5em;
+        display: block;
+        width: 10vw;
+        color: var(--textSecondary);
+        border: 1px solid var(--borderPrimary);
+        border-radius: 10px;
+        padding: .5em 1em;
+        transition: .2s ease all;
+        margin: 0;
+        font-family: inherit;
+        font-size: 100%;
+        line-height: 1.15;
+        overflow: hidden;
+    }
+
+    .login-form {
+        position: absolute;
+        transform: translate(-50%, 0%);
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 12vw;
+        height: 100%;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    .button {
+        text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2.5em;
+        margin: 0em 0 .1em;
+    }
+</style>

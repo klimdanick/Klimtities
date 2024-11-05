@@ -2,14 +2,26 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('node:path')
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
-    }
+    },
+    titleBarStyle: 'hidden',
+    titleBarOverlay: {
+      color: '#04090e',
+      symbolColor: '#ffffff',
+      height: 60
+    },
+    frame: false,
+    backgroundColor: '#FFF',
+    webPreferences: {
+      nodeIntegration: true
+    },
+
   })
 
   // and load the index.html of the app.
