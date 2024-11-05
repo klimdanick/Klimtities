@@ -1,6 +1,8 @@
 @echo off
 setlocal
 
+cd %~dp0
+
 :: Start the application
 npm start
 if errorlevel 1 (
