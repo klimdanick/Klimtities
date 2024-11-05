@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-cd %~dp0
+cd /d %~dp0
 
 :: Start the application
 npm start
@@ -11,3 +11,4 @@ if errorlevel 1 (
 )
 
 endlocal
+@pause
