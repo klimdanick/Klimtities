@@ -36,12 +36,14 @@ async function buildNote() {
   title = document.createElement("textarea");
   title.id = "title";
   title.placeholder = "TITLE";
+  title.setAttribute("spellcheck", false);
   document.getElementById("notePlane").appendChild(title);
   title.addEventListener('input', updateContent, false);
 
   note = document.createElement("textarea");
   note.id = "note";
   note.placeholder = "TEXT";
+  note.setAttribute("spellcheck", false);
   document.getElementById("notePlane").appendChild(note);
   note.addEventListener('input', updateContent, false);
 }

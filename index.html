@@ -52,6 +52,14 @@
 
 </html>
 <style>
+  :root {
+    --level0: #04090e;
+    /*#1d1d1d;*/
+    --level1: #2c2c2c;
+    --primary: #b81e44;
+    --text: #fff;
+  }
+
   * {
     font: 46px / 50px D-DIN-Bold, Arial, Verdana, sans-serif;
   }
@@ -63,8 +71,8 @@
     padding: 0;
     margin: 0;
     overflow-x: hidden;
-    background-color: #04090e;
-    color: white;
+    background-color: var(--level0);
+    color: var(--text);
     overflow-y: hidden;
   }
 
@@ -77,7 +85,7 @@
     height: 60px;
     width: calc(100% - 2px);
     /*Compensate for body 1px border*/
-    background: #04090e;
+    background: var(--level0);
   }
 
   #titlebar #tabTitle {
@@ -88,7 +96,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3px;
+    gap: 10px;
     position: absolute;
     height: calc(100% - 72px);
     width: 60px;
@@ -101,7 +109,7 @@
   #sidebar span {
     width: 50px;
     height: 50px;
-    background: #04090e;
+    background: var(--level0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,8 +117,12 @@
     border-radius: 10px;
   }
 
+  #sidebat span image {
+    width: 20px;
+  }
+
   #sidebar span:hover {
-    background: #081017;
+    background: var(--level1);
   }
 
   #sidebar #settingsButton {
@@ -144,20 +156,21 @@
   }
 
   #notesList {
-    border-right: 2px solid #04090e;
+    border-right: 4px solid var(--level0);
     border-radius: 0px 10px 0px 0px;
     height: 100%;
     width: 20%;
-    background-color: #081017;
+    background-color: var(--level1);
     display: flex;
     flex-direction: column;
+    bottom: 0;
   }
 
   #notePlane {
     height: 100%;
     width: 80%;
     border-radius: 10px 0px 0px 0px;
-    background-color: #081017;
+    background-color: var(--level1);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -167,7 +180,7 @@
   .notePreview {
     display: flex;
     flex-direction: column;
-    border-bottom: 2px solid #04090e;
+    border-bottom: 4px solid var(--level0);
     padding: 5px;
   }
 
@@ -182,26 +195,32 @@
   }
 
   #title {
-    height: 1.75em;
-    font-size: 1.25em;
-    background: #081017;
+    height: 1em;
+    font-size: 1.5em;
+    background: var(--level1);
     border: none;
     resize: none;
-    color: white;
+    color: var(--text);
+    border-bottom: 2px solid var(--primary);
   }
 
   #note {
     height: calc(100% - 1.75em);
     font-size: .75em;
-    background: #081017;
+    background-image: repeating-linear-gradient(0deg, var(--level0), var(--level0) 1px, var(--level1) 1px, var(--level1) 1.3em);
+    /* Adjust colors and spacing */
+    background-size: 100% 1.3em;
+    line-height: 1.3em;
+    /* The height between lines */
+    /*background: var(--level1);*/
     border: none;
-    color: white;
+    color: var(--text);
     resize: none;
   }
 
   #note:focus,
   #title:focus {
-    border: none;
+
     outline: none;
   }
 
@@ -246,24 +265,29 @@
     #title {
       height: 1.5em;
       font-size: 0.75em;
-      background: #081017;
+      background: var(--level1);
       border: none;
       resize: none;
-      color: white;
+      color: var(--text);
     }
 
     #note {
       height: calc(100% - 1.5em);
       font-size: .3em;
-      background: #081017;
+      background: var(--level1);
       border: none;
-      color: white;
+      color: var(--text);
       resize: none;
     }
 
     #createButton,
     #deleteButton {
       font-size: 0.4em;
+    }
+
+    #createButton:hover {
+      background-color: var(--level0);
+      border-radius: 10x;
     }
   }
 </style>
